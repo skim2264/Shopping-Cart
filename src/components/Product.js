@@ -26,9 +26,10 @@ const Product = (props) => {
             <h3>{name}</h3>
             <img src={`https://spoonacular.com/cdn/ingredients_100x100/${imgSrc}`} alt={name}></img>
             <form onSubmit={submitHandler}>
-                <input type="number" name="numofproduct" id="numofproduct" placeholder="# of items" value={quantity} onChange={onChangeHandler}></input>
-                <button onClick={increment} id="incButton" name="incButton">+</button>
-                <button onClick={decrement} id="decButton" name="decButton">-</button>
+                <input type="hidden" value={name} className="prodClass"></input>
+                <input type="number" name="numofproduct" className="numofproduct" placeholder="# of items" value={quantity} onChange={onChangeHandler}></input>
+                <button onClick={increment} className="incButton" name="incButton" type="button">+</button>
+                <button onClick={decrement} className="decButton" name="decButton" type="button">-</button>
                 <button type="submit">Add to Cart</button>
             </form>
         </div>

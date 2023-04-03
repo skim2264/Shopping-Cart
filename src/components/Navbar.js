@@ -1,7 +1,8 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
+    const {toggleCart} = props;
     return (
         <div className="navbarDiv">
             <div className="navPages">
@@ -9,9 +10,8 @@ const Navbar = () => {
                 <NavLink to="/shop"><button>Shop Page</button></NavLink>
             </div>
             <div className="navCart">
-                <button>Shopping Cart-use icon</button>
+                <button onClick={toggleCart}>Shopping Cart-use icon</button>
             </div>
-            
         </div>
     )
 };
