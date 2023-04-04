@@ -1,11 +1,13 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+import "../styles/Home.css";
 
 const Home = () => {
     return (
         <div className="homeDiv">
-            <h1>Introducing: Product Item</h1>
-            {/* <img src="" alt="">Image in background or middle of page</img> */}
-            <button>Shop Now-link to shop page</button>
+            <h2>Welcome to Earth's Pantry Grocery</h2>
+            <p>We are the #1 online grocery store to get your premium organic goods.</p>
+            <NavLink to="/shop"><button class="button">Shop Now</button></NavLink>
         </div>
     )
 };
