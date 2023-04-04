@@ -8,14 +8,21 @@ const Shop = (props) => {
     const [products, setProducts] = useState([]);
     const [cartProduct, setCartProduct] = useState({});
     const [cartUpdate, setCartUpdate] = useState(false);
+    let clearInput = null;
 
+    //clear number of products value once product is added to cart (based on function from Products child)
+    const assignPassFunc = (passedFunc) => {
+        clearInput = passedFunc;
+    }
+
+    //fetch products from API on mount
     useEffect(() => {
         fetchProducts();
     }, []);
 
+    //update the cart once something new is added to the cart
     useEffect(() => {
         if(cartUpdate) {
-            console.log(cartProduct);
             addToCart(cartProduct);
             setCartUpdate(false);
         }
@@ -40,6 +47,7 @@ const Shop = (props) => {
 
         setCartProduct({...product, num: input});
         setCartUpdate(true);
+        clearInput();
     }
 
     return(
@@ -47,7 +55,7 @@ const Shop = (props) => {
             <h1>Shop</h1>
             <div className="productCards">
                 {products.map(prod => (
-                    <Product name={prod.name} imgSrc={prod.image} submitHandler={prodSubmit} key={prod.id}/>
+                    <Product name={prod.name} imgSrc={prod.image} submitHandler={prodSubmit} key={prod.id} passFunc={assignPassFunc}/>
                 ))}
             </div>
         </div>

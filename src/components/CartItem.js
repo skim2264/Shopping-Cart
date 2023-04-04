@@ -3,7 +3,7 @@ import React, {useState} from "react";
 const CartItem = (props) => {
     const {item, deleteCartItem} = props;
 
-    const [quantity, setQuantity] = useState(item.num);
+    const [quantity, setQuantity] = useState(parseInt(item.num));
 
     const onChangeHandler = (e) => {
         const value = parseInt(e.target.value);

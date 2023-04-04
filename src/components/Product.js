@@ -5,6 +5,11 @@ const Product = (props) => {
 
     const [quantity, setQuantity] = useState(0);
 
+    const resetQuantity = () => {
+        setQuantity(0);
+    }
+    props.passFunc(resetQuantity);
+
     const onChangeHandler = (e) => {
         const value = parseInt(e.target.value);
 

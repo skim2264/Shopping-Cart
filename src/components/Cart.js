@@ -11,7 +11,6 @@ const Cart = (props) => {
             setCart([]);
         } else {
             const filtered = cart.filter((item) => parseInt(item.id) !== parseInt(itemId));
-            console.log(filtered);
             setCart(filtered)
         }
     }
@@ -20,8 +19,9 @@ const Cart = (props) => {
         <div className="cartDiv">
             <h2>Shopping Cart</h2>
             <div className="productsInCart">
-                Nothing in cart if no products exist in state.
-                {cart.map((item) => {
+                {(cart.length === 0) 
+                    ? <div>Nothing in cart if no products exist in state.</div>
+                    : cart.map((item) => {
                     return <CartItem item={item} deleteCartItem={deleteCartItem} key={item.id}></CartItem>
                 })}
             </div>
