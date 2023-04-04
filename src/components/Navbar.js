@@ -7,8 +7,8 @@ const Navbar = (props) => {
     const {toggleCart} = props;
     return (
         <div className="navbarDiv">
-            <NavLink to="/shop"><button id="shopButton" class="navButton">Shop</button></NavLink>
-            <button onClick={toggleCart} id="cartButton" class="navButton"><FontAwesomeIcon icon={icon({name:"cart-shopping"})} /></button>
+            <NavLink to="/shop"><button id="shopButton" className="navButton">Shop</button></NavLink>
+            <button onClick={toggleCart} id="cartButton" className="navButton"><FontAwesomeIcon icon={icon({name:"cart-shopping"})} /></button>
         </div>
     )
 };

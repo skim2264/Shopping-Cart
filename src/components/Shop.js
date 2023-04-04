@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Product from "./Product";
+import "../styles/Shop.css";
 
 const Shop = (props) => {
 
