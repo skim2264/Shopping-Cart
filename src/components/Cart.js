@@ -15,6 +15,11 @@ const Cart = (props) => {
         }
     }
 
+    const clearCart = () => {
+        alert("Thank you for ordering! Please shop with us again");
+        setCart([]);
+    }
+
     if (showCart) return (
         <div className="cartDiv">
             <h2>Shopping Cart</h2>
@@ -25,7 +30,7 @@ const Cart = (props) => {
                     return <CartItem item={item} deleteCartItem={deleteCartItem} key={item.id}></CartItem>
                 })}
             </div>
-            <button>Checkout and Pay</button>
+            <button onClick={clearCart}>Checkout and Pay</button>
         </div>
     )
 };

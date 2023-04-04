@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Shop from "./components/Shop";
 import Navbar from "./components/Navbar";
 import Cart from "./components/Cart";
+import { NavLink } from "react-router-dom";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -33,7 +34,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <div className="Header">
-          <h1>Earth's Pantry Grocery</h1>
+          <NavLink to="/" className="headingText"><h1>Earth's Pantry Grocery</h1></NavLink>
           <Navbar toggleCart={toggleCart}></Navbar>
         </div>
             <Routes>

@@ -30,9 +30,10 @@ const Shop = (props) => {
 
     const fetchProducts = async () => {
         const data = await fetch(
-            'https://api.spoonacular.com/food/ingredients/search?query=fruit&apiKey=a132079e1332476c9d13082e4bcd04df'
+            `https://api.spoonacular.com/food/ingredients/search?query=fruit&apiKey=${process.env.REACT_APP_API_KEY}`
         );
         const items = await data.json();
+        console.log(items);
 
         setProducts(items.results);        
     }
