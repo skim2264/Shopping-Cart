@@ -1,0 +1,50 @@
+button {
+    text-decoration: none;
+    padding: 5px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+button:hover {
+    border: 1px solid grey;
+}
+
+.navButton {
+    background-color:transparent;
+    color: white;
+}    
+
+.shopButton {
+    display: flex;
+    gap: 10px;
+}
+
+.incButton, .decButton {
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+
+.addToCartButton {
+    margin: 10px;
+}
+
+.exitCartButton, .deleteButton {
+    padding-left: 10px;
+    padding-right: 10px;
+    background: none;
+    color: grey;
+    font-weight: bold;
+}
+
+.exitCartButton {
+    font-size: 20px;
+}
+
+.checkoutButton {
+    position: absolute;
+    right: 10px;
+    bottom: 100px;
+}

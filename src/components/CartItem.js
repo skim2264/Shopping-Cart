@@ -23,13 +23,17 @@ const CartItem = (props) => {
 
     return (
         <div className="cartItemDiv">
-            <h3>{item.name}</h3>
-            <img src={`https://spoonacular.com/cdn/ingredients_100x100/${item.image}`} alt={item.name}></img>
-            <input type="hidden" value={item.name} className="prodClass" id={item.id}></input>
-            <input type="number" name="numofproduct" className="numofproduct" placeholder="# of items" value={quantity} onChange={onChangeHandler}></input>
-            <button onClick={increment} className="incButton" name="incButton" type="button">+</button>
-            <button onClick={decrement} className="decButton" name="decButton" type="button">-</button>
-            <button onClick={deleteCartItem} type="button" className="deleteButton" name="deleteButton">X</button>
+            <div className="cartItemHeader">
+                <h3>{item.name}</h3>
+                <button onClick={deleteCartItem} type="button" className="deleteButton" name="deleteButton">X</button>
+            </div>
+            <img src={`https://spoonacular.com/cdn/ingredients_100x100/${item.image}`} alt={item.name} className="prodImg"></img>
+            <div className="quantityInputDiv">
+                <input type="hidden" value={item.name} className="prodClass" id={item.id}></input>
+                <input type="number" name="numofproduct" className="numofproduct" placeholder="# of items" value={quantity} onChange={onChangeHandler}></input>
+                <button onClick={increment} className="incButton" name="incButton" type="button">+</button>
+                <button onClick={decrement} className="decButton" name="decButton" type="button">-</button>
+            </div>
         </div>
     )
 };

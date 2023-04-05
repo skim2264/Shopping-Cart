@@ -33,12 +33,6 @@
     width: 150px;
 }
 
-button {
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-}
-
 .incButton, .decButton {
     padding-left: 10px;
     padding-right: 10px;

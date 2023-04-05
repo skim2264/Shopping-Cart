@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import './styles/App.css'
+import './styles/App.css';
+import './styles/Cart.css';
+import './styles/buttons.css';
+import './styles/Home.css';
+import './styles/Shop.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
@@ -31,17 +35,17 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App" id="appDiv">
       <BrowserRouter>
         <div className="Header">
           <NavLink to="/" className="headingText"><h1>Earth's Pantry Grocery</h1></NavLink>
-          <Navbar toggleCart={toggleCart}></Navbar>
+          <Navbar toggleCart={toggleCart} cart={cart}></Navbar>
         </div>
             <Routes>
                 <Route path="/" element={<Home />}/>
                 <Route path="/shop" element={<Shop addToCart={addToCart}/>}/>
             </Routes>
-            <Cart showCart={showCart} cart={cart} setCart={setCart}></Cart>
+            <Cart showCart={showCart} cart={cart} setCart={setCart} toggleCart={toggleCart}></Cart>
       </BrowserRouter>
     </div>
   );

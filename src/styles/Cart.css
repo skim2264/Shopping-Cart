@@ -1,0 +1,29 @@
+.cartDiv {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color:bisque;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cartItemDiv {
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cartItemHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
