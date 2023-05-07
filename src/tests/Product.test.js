@@ -5,11 +5,12 @@ import { act } from "react-dom/test-utils";
 
 const mockProduct = {
     name: "banana",
-    imgSrc: "https://spoonacular.com/cdn/ingredients_100x100/banana.jpg"
+    imgSrc: "https://spoonacular.com/cdn/ingredients_100x100/banana.jpg",
+    passFunc: jest.fn(),
 }
 
 test('renders correct product information', () => {
-    render(<Product name={mockProduct.name} imgSrc={mockProduct.imgSrc}/>);
+    render(<Product name={mockProduct.name} imgSrc={mockProduct.imgSrc} passFunc={mockProduct.passFunc}/>);
     const productName = screen.getByRole("heading");
     const productImg = screen.getByRole("img");
     expect(productName.textContent).toMatch(/banana/i);
@@ -17,7 +18,7 @@ test('renders correct product information', () => {
 });
 
 test('increment button is functional', () => {
-    render(<Product name={mockProduct.name} imgSrc={mockProduct.imgSrc} />)
+    render(<Product name={mockProduct.name} imgSrc={mockProduct.imgSrc} passFunc={mockProduct.passFunc}/>)
 
     const button = screen.getByRole("button", {name:"+"});
     const input = screen.getByPlaceholderText("# of items");
@@ -29,7 +30,7 @@ test('increment button is functional', () => {
 });
 
 test("decrement button doesn't go negative", () => {
-    render(<Product name={mockProduct.name} imgSrc={mockProduct.imgSrc}/>);
+    render(<Product name={mockProduct.name} imgSrc={mockProduct.imgSrc} passFunc={mockProduct.passFunc}/>);
 
     const button = screen.getByRole("button", {name:"-"});
     const input = screen.getByPlaceholderText("# of items");
@@ -41,11 +42,11 @@ test("decrement button doesn't go negative", () => {
 });
 
 test("Manually typing quantity value works", () => {
-    render(<Product name={mockProduct.name} imgSrc={mockProduct.imgSrc}/>);
+    render(<Product name={mockProduct.name} imgSrc={mockProduct.imgSrc} passFunc={mockProduct.passFunc}/>);
     const input = screen.getByPlaceholderText("# of items");
     act(() => {
         userEvent.type(input, "2");
     });
 
     expect(input).toHaveValue(2);
-})
+});

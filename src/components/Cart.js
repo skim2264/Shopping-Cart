@@ -22,7 +22,7 @@ const Cart = (props) => {
 
 
     if (showCart) return (
-        <div className="cartDiv">
+        <div className="cartDiv" data-testid="cart-div">
             <div className="cartHeader">
                 <h2>Shopping Cart</h2>
                 <button className="exitCartButton" onClick={toggleCart}>X</button>

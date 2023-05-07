@@ -8,6 +8,7 @@ const Product = (props) => {
     const resetQuantity = () => {
         setQuantity(0);
     }
+    
     props.passFunc(resetQuantity);
 
     const onChangeHandler = (e) => {

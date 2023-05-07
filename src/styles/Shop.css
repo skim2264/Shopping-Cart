@@ -33,16 +33,6 @@
     width: 150px;
 }
 
-.incButton, .decButton {
-    padding-left: 10px;
-    padding-right: 10px;
-    
-}
-
-.addToCartButton {
-    margin: 10px;
-}
-
 input {
     border: 0.5px solid rgb(199, 197, 197);
     border-radius: 5px;
