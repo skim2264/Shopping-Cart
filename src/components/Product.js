@@ -27,9 +27,13 @@ const Product = (props) => {
         }
     }
 
+    const capitalize = (str) => {
+        return str.split(' ').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    }
+
     return(
         <div className="productCardDiv">
-            <h3>{name}</h3>
+            <h3 className="productCardName">{capitalize(name)}</h3>
             <img src={`https://spoonacular.com/cdn/ingredients_100x100/${imgSrc}`} alt={name} className="prodImg"></img>
             <form className="formDiv" onSubmit={submitHandler}>
                 <input type="hidden" value={name} className="prodClass"></input>

@@ -25,7 +25,7 @@ const CartItem = (props) => {
         <div className="cartItemDiv">
             <div className="cartItemHeader">
                 <h3>{item.name}</h3>
-                <button onClick={deleteCartItem} type="button" className="deleteButton" name="deleteButton">X</button>
+                <button onClick={deleteCartItem} type="button" className="deleteButton" name="deleteButton">&times;</button>
             </div>
             <img src={`https://spoonacular.com/cdn/ingredients_100x100/${item.image}`} alt={item.name} className="prodImg"></img>
             <div className="quantityInputDiv">

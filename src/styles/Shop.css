@@ -6,16 +6,28 @@
     padding-top: 20px;
 }
 
+.shopTitle {
+    background: #a2c11c;
+    color: #fdfff0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
 .productCards {
-    display: grid;
-    grid-template-columns: repeat(4, 250px);
-    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
 }
 
 .productCardDiv {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-width: 250px;
+    align-items: center;
+    margin: 25px;
 }
 
 .formDiv {
@@ -37,4 +49,8 @@ input {
     border: 0.5px solid rgb(199, 197, 197);
     border-radius: 5px;
     padding: 5px;
+}
+
+.productCardName {
+    font-weight: 300;
 }

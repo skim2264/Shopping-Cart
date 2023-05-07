@@ -1,10 +1,11 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Source Serif Pro', serif;
 }
 
 .Header {
-    background-color: #97c404;
+    background-color: #a2c11c;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +20,7 @@
 
 .headingText {
     text-decoration: none;
-    color: white;
+    color: #fdfff0;
     margin-bottom: 10px;
     font-size: 25px;
 }

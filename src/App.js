@@ -38,12 +38,12 @@ function App() {
     <div className="App" id="appDiv">
       <BrowserRouter>
         <div className="Header">
-          <NavLink to="/" className="headingText"><h1>Earth's Pantry Grocery</h1></NavLink>
+          <NavLink to="/Shopping-Cart" className="headingText"><h1>Earth's Pantry Grocery</h1></NavLink>
           <Navbar toggleCart={toggleCart} cart={cart}></Navbar>
         </div>
             <Routes>
-                <Route path="/" element={<Home />}/>
-                <Route path="/shop" element={<Shop addToCart={addToCart}/>}/>
+                <Route path="/Shopping-Cart" element={<Home />}/>
+                <Route path="/Shopping-Cart/shop" element={<Shop addToCart={addToCart}/>}/>
             </Routes>
             <Cart showCart={showCart} cart={cart} setCart={setCart} toggleCart={toggleCart}></Cart>
       </BrowserRouter>

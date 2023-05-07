@@ -22,19 +22,22 @@ const Cart = (props) => {
 
 
     if (showCart) return (
-        <div className="cartDiv" data-testid="cart-div">
-            <div className="cartHeader">
-                <h2>Shopping Cart</h2>
-                <button className="exitCartButton" onClick={toggleCart}>X</button>
+        <div className="cartContainer">
+            <div className="cartDiv" data-testid="cart-div">
+                <div className="cartHeader">
+                    <h2>Shopping Cart</h2>
+                    <button className="exitCartButton" onClick={toggleCart}>&times;</button>
+                </div>
+                <hr />
+                <div className="productsInCart">
+                    {(cart.length === 0) 
+                        ? <div>Cart is empty.</div>
+                        : cart.map((item) => {
+                        return <CartItem item={item} deleteCartItem={deleteCartItem} key={item.id}></CartItem>
+                    })}
+                </div>
+                <button onClick={clearCart} className="checkoutButton">Checkout and Pay</button>
             </div>
-            <div className="productsInCart">
-                {(cart.length === 0) 
-                    ? <div>Cart is empty.</div>
-                    : cart.map((item) => {
-                    return <CartItem item={item} deleteCartItem={deleteCartItem} key={item.id}></CartItem>
-                })}
-            </div>
-            <button onClick={clearCart} className="checkoutButton">Checkout and Pay</button>
         </div>
     )
 };

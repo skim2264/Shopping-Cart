@@ -33,7 +33,6 @@ const Shop = (props) => {
             `https://api.spoonacular.com/food/ingredients/search?query=fruit&apiKey=${process.env.REACT_APP_API_KEY}`
         );
         const items = await data.json();
-        console.log(items);
 
         setProducts(items.results);        
     }
@@ -53,7 +52,9 @@ const Shop = (props) => {
 
     return(
         <div className="shopDiv">
-            <h1>Shop</h1>
+            <div className="shopTitle">
+                <h1>Shop</h1> 
+            </div>
             <div className="productCards">
                 {products.map(prod => (
                     <Product name={prod.name} imgSrc={prod.image} submitHandler={prodSubmit} key={prod.id} passFunc={assignPassFunc}/>
